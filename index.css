@@ -1,0 +1,128 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden; /* prevents scrolling */
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 18px;
+}
+
+body{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  position: relative;
+  background: radial-gradient(ellipse at center, #afddff 0%, #A0E0FF 40%,  #e7f4fe 70%);
+}
+
+.main-box{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap:30px;
+  @media(width<600px){
+    flex-direction: column;
+  }
+}
+
+.main-box img {
+  max-width: 50%; /* caps the width */
+  height: auto;
+  flex-shrink: 0;
+  animation: shake 5s ease-in-out infinite;
+}
+
+.box{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.reply{
+  position: relative;
+  color: #001f3e;
+  text-align: center;
+  max-width: 450px;
+  margin-inline: auto;
+  margin-bottom: 20px;
+}
+
+h1{
+  font-family: 'Chewy','Times New Roman';
+  text-align: center;
+  font-size: 60px;
+  letter-spacing: 3px;
+  max-width: 450px;
+  margin-inline: auto;
+  margin-bottom: 30px;
+  color: #001f3e;
+}
+
+.snow-flake{
+  opacity: 0.75;
+  animation: drift 3s ease-in-out infinite alternate;
+}
+
+@keyframes drift {
+  from { transform: translateY(0px); }
+  to   { transform: translateY(20px); }
+}
+
+button {
+  cursor: pointer;
+  display: block;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 170px;
+  height: 170px;
+  border: 0;
+  border-radius: 50%;
+  padding: .7em 1em;
+  margin: 4em auto 3em;
+  text-align: center;
+  color: #fff;
+  background: linear-gradient(180deg, #39C2C9 0%, #3FC8C9 80%, #3FC8C9 100%);
+  box-shadow: 2px 5px 30px rgba(63, 200, 201, .4);
+
+  will-change: transform, filter;
+  transition: all 0.3s ease-out;
+}
+button .fa {
+  font-size: 90px;
+  line-height: 160px;
+  margin: 0;
+  text-shadow: 1px 2px 2px #2a8b90;
+}
+button:hover {
+  transform: scale(.92);
+}
+button:active {
+  filter: brightness(.8);
+}
+button:focus {
+  outline: 0;
+}
+
+.fa {
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: 1.3em;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin-left: 10px;
+}
+.fa-github::before {
+    content: "\f09b";
+}
+
+@keyframes shake{
+  0%{transform: translateY(-0px);}
+
+  50%{transform: translateY(-40px);}
+
+  100%{transform: translateY(-0px);}
+}
