@@ -30,7 +30,7 @@ startBtn.addEventListener('click', () => {
 recognition.addEventListener('result',async (event)=>{
   const transcript = event.results[0][0].transcript;
   console.log(transcript);
-  const response =await fetch('http://localhost:8000/speak',{
+  const response =await fetch('https://pengu-talks.onrender.com/speak',{
     method: 'POST',
     headers: {
       "Content-Type": "application/json"
